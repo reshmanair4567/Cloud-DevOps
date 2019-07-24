@@ -1,0 +1,15 @@
+Description: >
+  Reshma Nair
+  This template deploys a VPC, with a pair of publc and private subnets across two Availablity Zones. 
+  It deploys an Internet Gateway , with route on public subnets. 
+  It deploys a pair of NAT Gateways( one  ) and default routes for them in private subnets.
+
+Parameters:
+    
+    EnvironmentName:
+        Description: An environment name will be prefixed to resources
+        Type: String
+
+    VpcCIDR:
+        Description: Please enter the IP range ( CIDR notation) for this 
+        Type: String
