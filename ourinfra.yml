@@ -9,14 +9,13 @@ Parameters:
     Description:
     Please enter your Ip range( CIDR notation) for this
     Type: String
-    Default: 10.0.0.0/16
+    Default: 11.0.0.0/16
 
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
-      CidrBlock: 10.0.0.0/16
-      EnableDnsSupport: 'false'
+      CidrBlock: 11.0.0.0/16
       EnableDnsHostnames: 'true'
       InstanceTenancy: dedicated
       Tags:

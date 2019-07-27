@@ -1,5 +1,5 @@
-// creating a shell script to avoid typing long terminal commands everytime to create CloudFormation template
-aws cloudformation create-stack \
+
+#creating a shell script to avoid typing long terminal commands everytime to create CloudFormation templateaws cloudformation create-stack \
 --stack-name $1 \
 --template-body file://$2 \
 --parameters file://$3 \
