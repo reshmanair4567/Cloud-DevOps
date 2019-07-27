@@ -1,0 +1,12 @@
+
+Parameters:
+  EnvironmentName:
+    Description:
+    An environment name that will be prefixed to your resolution
+    Type: String
+
+  VpcCIDR:
+    Description:
+    Please enter your Ip range( CIDR notation) for this
+    Type: String
+    Default: 10.0.0.0/16
