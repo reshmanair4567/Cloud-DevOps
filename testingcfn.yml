@@ -7,4 +7,9 @@ Resources:
       EnableDnsSupport: 'false'
       EnableDnsHostnames: 'true'
       InstanceTenancy: dedicated
+      Tags:
+          Key:
+          Name
+          Value:
+          !Ref EnvironmentName
       
