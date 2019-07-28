@@ -1,5 +1,5 @@
 Description: >
-  Reshma Nair /Udacity 2019
+  Reshma Nair
 
 Parameters:
   EnvironmentName:
@@ -53,7 +53,7 @@ Resources:
         UserData:
           Fn::Base64: !Sub |
             #!/bin/bash
-            apt-get u pdate -y
+            apt-get update -y
             apt-get install unzip awscli -y
             apt-get install apache2 -y
             
