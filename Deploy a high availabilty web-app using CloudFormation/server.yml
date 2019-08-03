@@ -1,5 +1,5 @@
 Description: >
-  Reshma Nair
+  Reshma Nair - Deploy a high availabilty web-app using CloudFormation
 
 Parameters:
   EnvironmentName:
@@ -23,28 +23,6 @@ Resources:
           - IpProtocol: tcp
             FromPort: 80
             ToPort: 80
-            CidrIp: 0.0.0.0/0
-
-  WebServerSecGroup:
-      Type: AWS::EC2::SecurityGroup
-      Properties:
-          GroupDescription: Allow http to our hosts and SSH from local
-          VpcId: 
-            Fn::ImportValue:
-              !Sub "${EnvironmentName}-VPCID"
-          SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 8080
-            ToPort: 8080
-            CidrIp: 0.0.0.0/0
-          - IpProtocol: tcp
-            FromPort: 22
-            ToPort: 22
-            CidrIp: 0.0.0.0/0
-          SecurityGroupEgress:
-          - IpProtocol: tcp
-            FromPort: 0
-            ToPort: 65535
             CidrIp: 0.0.0.0/0
 
   WebAppLaunchConfig:
@@ -132,4 +110,3 @@ Resources:
         VpcId:
           Fn::ImportValue:
               !Sub "${EnvironmentName}-VPCID"
-
