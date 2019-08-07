@@ -91,7 +91,6 @@ Resources:
             Tags:
                 -   Key: Name
                     Value: !Sub ${EnvironmentName}-Public-Subnet-AZ2
-
     LBSecGroup:
         Type: AWS::EC2::SecurityGroup
         Properties:
@@ -254,3 +253,6 @@ Resources:
             Action:
             - sts:AssumeRole
         Path: "/"
+
+
+    
