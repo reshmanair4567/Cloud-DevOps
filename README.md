@@ -2,6 +2,8 @@ Deploy Static Website on AWS
 
  I deployed a static website to AWS using S3, CloudFront, and IAM.
 
+
+
 The files included are: 
 
 index.html - The Index document for the website.
