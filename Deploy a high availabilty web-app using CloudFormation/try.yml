@@ -8,7 +8,7 @@ Resources:
             EnableDnsSupport: true
             Tags:
                 -   Key: Name
-                    Value: !Sub ${EnvironmentName}-vpc
+                    Value: !Sub ${EnvironmentName}-vpc        
     PrivateSub1:
         Type: AWS::EC2::Subnet
         Properties:
@@ -17,9 +17,8 @@ Resources:
             CidrBlock: !Ref PrivateSubnet1CIDR
             MapPublicIpOnLaunch: false
             Tags:
-              -   Key: Name
-                Value: !Sub ${EnvironmentName}-Private-Subnet-AZ1
-      
+                -   Key: Name
+                    Value: !Sub ${EnvironmentName}-private-subnet-AZ1  
     PrivateSub2:
         Type: 'AWS::EC2::Subnet'
         Properties:
@@ -201,7 +200,7 @@ Resources:
               - Ref: PublicSub1
               - Ref: PublicSub2
           SecurityGroups:
-              - Ref: SecurityGroupWeb
+              - Ref: WebSecurityGroup
           Tags:
               - Key: Name
                 Value: !Sub ${EnvironmentName}-lb
@@ -249,7 +248,7 @@ Resources:
                 -   Key: Name
                     Value: !Sub ${EnvironmentName}-bastion-sg
 
-    SecurityGroupWeb:
+    WebSecurityGroup:
       Type: AWS::EC2::SecurityGroup
       Properties:
         VpcId: !Ref 'VPC'
@@ -315,7 +314,7 @@ Resources:
         IamInstanceProfile:
           Ref: ListS3BucketsInstanceProfile
         SecurityGroups:
-          - Ref: SecurityGroupWeb
+          - Ref: WebSecurityGroup
         InstanceType: t2.micro
         BlockDeviceMappings:
           - DeviceName: "/dev/xvda"
