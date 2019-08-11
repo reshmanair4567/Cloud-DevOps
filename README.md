@@ -8,9 +8,10 @@ index.html - The Index document for the website.
 
 /img - The background image file for the website.
 
+
 /vendor - Bootstrap CSS framework, Font, and JavaScript libraries needed for the website to function.
 
 /css - CSS files for the website.
 
 
-Website URL: http://d3v92o3ff8yg9k.cloudfront.net/index.html
+Website URL: http://d3v92o3ff8yg9k.cloudfront.net/index.html   
